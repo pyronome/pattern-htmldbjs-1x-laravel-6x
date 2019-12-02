@@ -1,6 +1,3 @@
-**Pyronome** is an online platform that allows software developers to develop sustainable and scalable software solutions really fast.
-For further information, please visit https://pyronome.com.
-
 **HTMLDB.js** is a simple HTML data & template engine. **HTMLDB.js** is written in pure JavaScript so that it can be used with different backend and frontend frameworks. For further information about **HTMLDB.js**, please visit https://github.com/htmldbjs/.
 
 **Laravel** is a web application framework with expressive, elegant syntax. For further information about **Laravel** Framework, please visit https://laravel.com/.
