@@ -1,3 +1,3 @@
         $this->mapHTMLDBRoutes();
 
-        /* **snippets:end_map_method** */
+        /* **snippet:end_map_method** */
