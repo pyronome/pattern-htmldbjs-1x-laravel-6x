@@ -1,3 +1,4 @@
+
     /**
      * Define the "htmldb" routes for the application.
      *
@@ -12,5 +13,3 @@
              ->namespace('\App\Http\Controllers\HTMLDB')
              ->group(base_path('routes/htmldb.php'));
     }
-
-	/* **snippet:end_class** */
