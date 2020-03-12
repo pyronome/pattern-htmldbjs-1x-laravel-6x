@@ -1,4 +1,3 @@
-
     /**
      * Define the "htmldb" routes for the application.
      *
