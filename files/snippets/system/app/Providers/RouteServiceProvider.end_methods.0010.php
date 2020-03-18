@@ -9,6 +9,6 @@
     {
         Route::prefix('htmldb')
              ->middleware('htmldb')
-             ->namespace($this->namespace)
+             ->namespace('App\Http\Controllers\HTMLDB')
              ->group(base_path('routes/htmldb.php'));
     }
