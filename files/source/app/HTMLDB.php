@@ -60,12 +60,13 @@ class HTMLDB
 	}
 
 	public function requestPOSTRow($requests = NULL,
-			$prefix = '',
 			$columns,
 			$protectedColumns = [],
+			$index = 0,
 			$forceNew = false)
 	{
 
+		$prefix = ('htmldb_row' . $prefix . '_');
 		$row = [];
 		$columnCount = count($columns);
 
