@@ -11,7 +11,8 @@ class HTMLDB
     public $list = [];
     public $columns = [];
 
-	public function printHTMLDBList() {
+	public function printHTMLDBList()
+	{
 
 		$count = count($this->list);
 		$columnCount = count($this->columns);
@@ -39,7 +40,8 @@ class HTMLDB
 
 	}
 
-	public function printResponseJSON() {
+	public function printResponseJSON()
+	{
 
 		$arrayJSON = [
 				'lastMessage' => $this->lastMessage,
@@ -62,6 +64,7 @@ class HTMLDB
 			$protectedColumns = [],
 			$forceNew = false)
 	{
+
 		$row = [];
 
 		$requestKeys = array_keys($requests);
@@ -85,9 +88,12 @@ class HTMLDB
         } // if ($forceNew) {
 
 		return $row;
+
 	}
 
-	public function assignRowToObject(&$object, $row) {
+	public function assignRowToObject(&$object, $row)
+	{
+
 		$rowKeys = array_keys($row);
 		$rowKeyCount = count($rowKeys);
 		$property = '';
@@ -100,5 +106,7 @@ class HTMLDB
 		} // for ($i = 0; $i < $rowKeyCount; $i++) {
 
 		return;
+
 	}
+
 }
