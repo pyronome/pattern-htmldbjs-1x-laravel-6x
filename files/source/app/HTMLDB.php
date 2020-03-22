@@ -66,7 +66,7 @@ class HTMLDB
 			$forceNew = false)
 	{
 
-		$prefix = ('htmldb_row' . $prefix . '_');
+		$prefix = ('htmldb_row' . $index . '_');
 		$row = [];
 		$columnCount = count($columns);
 
