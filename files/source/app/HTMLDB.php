@@ -61,21 +61,25 @@ class HTMLDB
 
 	public function requestPOSTRow($requests = NULL,
 			$prefix = '',
+			$columns,
 			$protectedColumns = [],
 			$forceNew = false)
 	{
 
 		$row = [];
+		$columnCount = count($columns);
 
-		$requestKeys = array_keys($requests);
-		$requestKeyCount = count($requestKeys);
-
-		for ($i = 0; $i < $requestKeyCount; $i++) {
-			if (in_array($requestKeys[$i], $protectedColumns)) {
+		for ($i = 0; $i < $columnCount; $i++) {
+			if (in_array($columns[$i], $protectedColumns)) {
 				continue;
-			} // if (in_array($requestKeys[$i], $protectedColumns)) {
-			$row[$requestKeys[$i]] = $requests[$requestKeys[$i]];
-		} // for ($i = 0; $i < $requestKeyCount; $i++) {
+			} // if (in_array($columns[$i], $protectedColumns)) {
+
+			$row[$columns[$i]] = '';
+
+			if (isset($requests[$prefix . $columns[$i]])) {
+				$row[$columns[$i]] = $requests[$prefix . $columns[$i]];
+			} // if (isset($requests[$columns[$i]])) {
+		} // for ($i = 0; $i < $columnCount; $i++) {
 
 		if (isset($requests[$prefix . 'id'])) {
             $row['id'] = intval($requests[$prefix . 'id']);
