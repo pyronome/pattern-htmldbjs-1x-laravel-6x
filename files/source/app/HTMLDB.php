@@ -56,4 +56,49 @@ class HTMLDB
 		echo $content;
 
 	}
+
+	public function requestPOSTRow($requests = NULL,
+			$prefix = '',
+			$protectedColumns = [],
+			$forceNew = false)
+	{
+		$row = [];
+
+		$requestKeys = array_keys($requests);
+		$requestKeyCount = count($requestKeys);
+
+		for ($i = 0; $i < $requestKeyCount; $i++) {
+			if (in_array($requestKeys[$i], $protectedColumns)) {
+				continue;
+			} // if (in_array($requestKeys[$i], $protectedColumns)) {
+			$row[$requestKeys[$i]] = $requests[$requestKeys[$i]];
+		} // for ($i = 0; $i < $requestKeyCount; $i++) {
+
+		if (isset($requests[$prefix . 'id'])) {
+            $row['id'] = intval($requests[$prefix . 'id']);
+		} else {
+			$row['id'] = 0;
+        } // if (isset($requests[$prefix . 'id'])) {
+
+        if ($forceNew) {
+            $row['id'] = 0;
+        } // if ($forceNew) {
+
+		return $row;
+	}
+
+	public function assignRowToObject(&$object, $row) {
+		$rowKeys = array_keys($row);
+		$rowKeyCount = count($rowKeys);
+		$property = '';
+
+		for ($i = 0; $i < $rowKeyCount; $i++) {
+			$property = $rowKeys[$i];
+			if (property_exists($object, $property)) {
+				$object->$property = $row[$property];
+			} // if (property_exists($object, $property)) {
+		} // for ($i = 0; $i < $rowKeyCount; $i++) {
+
+		return;
+	}
 }
