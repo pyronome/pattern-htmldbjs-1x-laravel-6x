@@ -1,0 +1,1 @@
+use App\Http\Middleware\HTMLDBMiddleware;

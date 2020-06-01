@@ -11,7 +11,8 @@ class HTMLDB
     public $list = [];
     public $columns = [];
 
-	public function printHTMLDBList() {
+	public function printHTMLDBList()
+	{
 
 		$count = count($this->list);
 		$columnCount = count($this->columns);
@@ -39,7 +40,8 @@ class HTMLDB
 
 	}
 
-	public function printResponseJSON() {
+	public function printResponseJSON()
+	{
 
 		$arrayJSON = [
 				'lastMessage' => $this->lastMessage,
@@ -56,4 +58,60 @@ class HTMLDB
 		echo $content;
 
 	}
+
+	public function requestPOSTRow($requests = NULL,
+			$columns,
+			$protectedColumns = [],
+			$index = 0,
+			$forceNew = false)
+	{
+
+		$prefix = ('htmldb_row' . $index . '_');
+		$row = [];
+		$columnCount = count($columns);
+
+		for ($i = 0; $i < $columnCount; $i++) {
+			if (in_array($columns[$i], $protectedColumns)) {
+				continue;
+			} // if (in_array($columns[$i], $protectedColumns)) {
+
+			$row[$columns[$i]] = '';
+
+			if (isset($requests[$prefix . $columns[$i]])) {
+				$row[$columns[$i]] = $requests[$prefix . $columns[$i]];
+			} // if (isset($requests[$columns[$i]])) {
+		} // for ($i = 0; $i < $columnCount; $i++) {
+
+		if (isset($requests[$prefix . 'id'])) {
+            $row['id'] = intval($requests[$prefix . 'id']);
+		} else {
+			$row['id'] = 0;
+        } // if (isset($requests[$prefix . 'id'])) {
+
+        if ($forceNew) {
+            $row['id'] = 0;
+        } // if ($forceNew) {
+
+		return $row;
+
+	}
+
+	public function assignRowToObject(&$object, $row)
+	{
+
+		$rowKeys = array_keys($row);
+		$rowKeyCount = count($rowKeys);
+		$property = '';
+
+		for ($i = 0; $i < $rowKeyCount; $i++) {
+			$property = $rowKeys[$i];
+			if (property_exists($object, $property)) {
+				$object->$property = $row[$property];
+			} // if (property_exists($object, $property)) {
+		} // for ($i = 0; $i < $rowKeyCount; $i++) {
+
+		return;
+
+	}
+
 }

@@ -8,7 +8,7 @@
     protected function mapHTMLDBRoutes()
     {
         Route::prefix('htmldb')
-             ->middleware('htmldb')
-             ->namespace('\App\Http\Controllers\HTMLDB')
+             ->middleware(['web', HTMLDBMiddleware::class])
+             ->namespace('App\Http\Controllers\HTMLDB')
              ->group(base_path('routes/htmldb.php'));
     }
