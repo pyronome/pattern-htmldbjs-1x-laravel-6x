@@ -8,6 +8,10 @@ This repository contains Pyronome **HTMLDB.js 1.x for Laravel 6.x** pattern basi
 
 Please refer to the [Getting Started](https://github.com/pyronome/pattern-htmldbjs-1x-laravel-6x#getting-started) section for step by step instructions.
 
+## Status: Experimental
+
+Not available for production environments. The stable version is coming soon.
+
 ## Getting Started
 
 Please follow the steps below to generate source code using **HTMLDB.js 1.x for Laravel 6.x** pattern:
