@@ -1,6 +1,6 @@
 [
     {
-        "base":"\/project\/",
+        "base":"\/project",
         "enabled":"1",
         "source":"source/source201912311492628eb5840",
         "destination":"\/source\/routes\/htmldb.php",
