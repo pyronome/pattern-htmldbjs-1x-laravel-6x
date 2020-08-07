@@ -1,0 +1,123 @@
+[
+    {
+        "base":"\/project\/",
+        "enabled":"1",
+        "source":"source/source201912311492628eb5840",
+        "destination":"\/source\/routes\/htmldb.php",
+        "temporary":"0",
+        "append":"0",
+        "glue":"",
+        "prepend_crlf":"0",
+        "append_crlf":"0"
+    },
+    {
+        "base":"\/project\/model_list\/model\/name",
+        "enabled":"1",
+        "source":"source/source2019123115065ff0102d",
+        "destination":"LARAVEL_HTMLDB_ROUTES",
+        "temporary":"1",
+        "append":"1",
+        "glue":"",
+        "prepend_crlf":"0",
+        "append_crlf":"1"
+    },
+    {
+        "base":"\/project\/model_list\/model\/name",
+        "enabled":"1",
+        "source":"source/source201912311543b0c077d5",
+        "destination":"\/source\/app\/Http\/Controllers\/HTMLDB\/{{$ __value__}}HTMLDBController.php",
+        "temporary":"0",
+        "append":"1",
+        "glue":"",
+        "prepend_crlf":"0",
+        "append_crlf":"0"
+    },
+    {
+        "base":"\/project\/model_list\/model",
+        "enabled":"1",
+        "source":"",
+        "destination":"LARAVEL_MODEL{{$ __item_index__\/__value__}}_REQUEST_INPUTFIELDS",
+        "temporary":"1",
+        "append":"1",
+        "glue":"",
+        "prepend_crlf":"0",
+        "append_crlf":"0"
+    },
+    {
+        "base":"\/project\/model_list\/model\/property_list\/property\/name",
+        "enabled":"1",
+        "source":"source/source2019123121144394add91",
+        "destination":"LARAVEL_MODEL{{$ ..\/..\/..\/__item_index__\/__value__}}_REQUEST_INPUTFIELDS",
+        "temporary":"1",
+        "append":"1",
+        "glue":"",
+        "prepend_crlf":"0",
+        "append_crlf":"1"
+    },
+    {
+        "base":"\/project\/model_list\/model\/property_list\/is_count_0",
+        "enabled":"1",
+        "source":"",
+        "destination":"LARAVEL_MODEL{{$ ..\/..\/__item_index__\/__value__}}_CONTROLLER_COLUMNS",
+        "temporary":"1",
+        "append":"1",
+        "glue":"",
+        "prepend_crlf":"0",
+        "append_crlf":"0"
+    },
+    {
+        "base":"\/project\/model_list\/model\/property_list\/property\/name",
+        "enabled":"1",
+        "source":"source/source201912312133553de8b30",
+        "destination":"LARAVEL_MODEL{{$ ..\/..\/..\/__item_index__\/__value__}}_CONTROLLER_COLUMNS",
+        "temporary":"1",
+        "append":"1",
+        "glue":",",
+        "prepend_crlf":"0",
+        "append_crlf":"1"
+    },
+    {
+        "base":"\/project\/model_list\/model",
+        "enabled":"1",
+        "source":"",
+        "destination":"LARAVEL_MODEL{{$ __item_index__\/__value__}}_LIST_COLUMNS",
+        "temporary":"1",
+        "append":"1",
+        "glue":"",
+        "prepend_crlf":"0",
+        "append_crlf":"0"
+    },
+    {
+        "base":"\/project\/model_list\/model\/property_list\/property\/name",
+        "enabled":"1",
+        "source":"source/source2019123121537432f4cda",
+        "destination":"LARAVEL_MODEL{{$ ..\/..\/..\/__item_index__\/__value__}}_LIST_COLUMNS",
+        "temporary":"1",
+        "append":"1",
+        "glue":"",
+        "prepend_crlf":"0",
+        "append_crlf":"1"
+    },
+    {
+        "base":"\/project\/model_list\/model",
+        "enabled":"1",
+        "source":"",
+        "destination":"LARAVEL_MODEL{{$ __item_index__\/__value__}}_CHECK_PROPERTIES",
+        "temporary":"1",
+        "append":"1",
+        "glue":"",
+        "prepend_crlf":"0",
+        "append_crlf":"1"
+    },
+    {
+        "base":"\/project\/model_list\/model\/property_list\/property\/name",
+        "enabled":"1",
+        "source":"source/source2019123121728a8f8c291",
+        "destination":"LARAVEL_MODEL{{$ ..\/..\/..\/__item_index__\/__value__}}_CHECK_PROPERTIES",
+        "temporary":"1",
+        "append":"1",
+        "glue":"",
+        "prepend_crlf":"0",
+        "append_crlf":"1"
+    }
+]
