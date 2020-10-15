@@ -1,0 +1,10 @@
+        if (empty($object->{{$ __value__/__lowercase_text__}})) {
+
+            $result['errorCount']++;
+            if ($result['lastError'] != '') {
+                $result['lastError'] .= '<br>';
+            } // if ($result['lastError'] != '') {
+
+            $result['lastError'] .= 'Please specify a value for {{$ ../../../name/__value__}}.{{$ __value__/__lowercase_text__}}.';
+
+        } // if (empty($object->{{$ __value__/__lowercase_text__}})) {

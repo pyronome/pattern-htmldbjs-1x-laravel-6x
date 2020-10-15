@@ -1,0 +1,107 @@
+<?php
+
+namespace App\Http\Controllers\HTMLDB;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\HTMLDB\HTMLDB;
+use App\{{$ __value__}};
+
+class {{$ __value__}}HTMLDBController extends Controller
+{
+    public function readHTMLDB(Request $request) {
+        $objectHTMLDB = new HTMLDB();
+
+        $objectHTMLDB->columns = [
+            'id',
+            'deleted',
+{{LARAVEL_MODEL{{$ ../__item_index__/__value__}}_CONTROLLER_COLUMNS}}
+        ];
+
+        $objects = {{$ __value__}}::where('deleted', 0)->get();
+
+	    $index = 0;
+
+        $objectHTMLDB->list = [];
+
+        foreach ($objects as $object) {
+            $objectHTMLDB->list[$index]['id'] = $object->id;
+            $objectHTMLDB->list[$index]['deleted'] = $object->deleted;
+{{LARAVEL_MODEL{{$ ../__item_index__/__value__}}_LIST_COLUMNS}}
+            $index++;
+        } // foreach ($objects as $object) {
+		
+        $objectHTMLDB->printHTMLDBList();
+        return;
+    }
+
+    public function validateHTMLDB(Request $request) {
+        $objectHTMLDB = new HTMLDB();
+        $result = $this->check($request);
+
+        $objectHTMLDB->lastError = $result['lastError'];
+        $objectHTMLDB->errorCount = $result['errorCount'];
+        $objectHTMLDB->lastMessage = $result['lastMessage'];
+        $objectHTMLDB->messageCount = $result['messageCount'];
+
+        $objectHTMLDB->printResponseJSON();
+        return;
+    }
+
+    public function check(Request $request) {
+
+        $object = $this->request($request->all(), 'htmldb_row0_', true);
+
+        $result = [
+            'lastError' => '',
+            'errorCount' => 0,
+            'lastMessage' => '',
+            'messageCount' => 0
+        ];
+{{LARAVEL_MODEL{{$ ../__item_index__/__value__}}_CHECK_PROPERTIES}}
+        return $result;
+    }
+
+    public function writeHTMLDB(Request $request) {
+        $objectHTMLDB = new HTMLDB();
+        $result = $this->check($request);
+
+        if (0 == $result['errorCount']) {
+            $object = $this->request($request->all(), 'htmldb_row0_');
+            $object->save();
+        } // if (0 == $result['errorCount']) {
+
+        $objectHTMLDB->lastError = $result['lastError'];
+        $objectHTMLDB->errorCount = $result['errorCount'];
+        $objectHTMLDB->lastMessage = $result['lastMessage'];
+        $objectHTMLDB->messageCount = $result['messageCount'];
+
+        $objectHTMLDB->printResponseJSON();
+        return;
+    }
+
+	public function request($requests = NULL, $prefix = '', $forceNew = false) {
+        $object = null;
+        $id = 0;
+
+		if (isset($requests[$prefix . 'id'])) {
+            $id = intval($requests[$prefix . 'id']);
+        } // if (isset($requests[$prefix . 'id'])) {
+        
+        if ($forceNew) {
+            $id = 0;
+        } // if ($forceNew) {
+
+        if ($id > 0) {
+            $object = {{$ __value__}}::find($id);
+        } else {
+            $object = new {{$ __value__}}();
+        } // if ($id > 0) {
+
+		$object->deleted = isset($requests[$prefix . 'deleted'])
+				? intval($requests[$prefix . 'deleted'])
+				: 0;{{LARAVEL_MODEL{{$ ../__item_index__/__value__}}_REQUEST_INPUTFIELDS}}
+
+		return $object;
+	}
+}

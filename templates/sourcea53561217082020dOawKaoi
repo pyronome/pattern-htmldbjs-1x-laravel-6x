@@ -1,0 +1,85 @@
+{{@if {{$ ../property_type/__value__}} == "Checkbox" }}
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? intval($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "ClassSelection" }}
+		/*class property ::must_update::*/
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? htmlspecialchars($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "Date" }}
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? intval($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "DateTime" }}
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? intval($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "Selection" }}
+		/*selection property ::must_update::*/
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? htmlspecialchars($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "EmailAddress" }}
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? htmlspecialchars($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "FileList" }}
+		/*file property ::must_update::*/
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? htmlspecialchars($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "HTMLEditor" }}
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? htmlspecialchars($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "ImageList" }}
+		/*image property ::must_update::*/
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? htmlspecialchars($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "Integer" }}
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? intval($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "Location" }}
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? htmlspecialchars($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "LongText" }}
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? htmlspecialchars($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "Number" }}
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? floatval($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "Password" }}
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? htmlspecialchars($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "PhoneNumber" }}
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? htmlspecialchars($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "Radio" }}
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? intval($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "ShortText" }}
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? htmlspecialchars($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "Switch" }}
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? intval($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "Time" }}
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? intval($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@elseif {{$ ../property_type/__value__}} == "URLAddress" }}
+		$object->{{$ __value__/__lowercase_text__}} = isset($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				? htmlspecialchars($requests[$prefix . '{{$ __value__/__lowercase_text__}}'])
+				: $object->{{$ __value__/__lowercase_text__}};
+{{@endif}}
